@@ -1,0 +1,14 @@
+[Unit]
+Description=Seafile
+After=network.target mariadb.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/share/nginx/html/seafile/seafile-server-latest/seafile.sh start
+ExecStop=/usr/share/nginx/html/seafile/seafile-server-latest/seafile.sh stop
+RemainAfterExit=yes
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
