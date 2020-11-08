@@ -4,11 +4,11 @@ Terraform project to provision a [Seafile](https://www.seafile.com/en/home/) ser
 Seafile is installed using an [nginx](https://www.nginx.com/) webserver and a [MariaDB](https://mariadb.org/) database.
 The [s3fs-fuse](https://github.com/s3fs-fuse/s3fs-fuse) project is used to mount the S3 bucket to the instance, so it can be used as data store.
 
-The following resources will be created:
+The following AWS resources will be created:
 - Amazon Linux 2-based EC2 instance hosting the Seafile server and serving the front end
 - Amazon S3 bucket for back end
 - VPC/Security Group configuration
-- Route53 record to access the front end
+- Route 53 record to access the front end
 - IAM role to give S3 permissions to the EC2 instance.
 
 In addition to that, this project includes:
@@ -18,7 +18,7 @@ In addition to that, this project includes:
 
 ## Prerequisites
 Before the installation, make sure to have the following prepared:
-- Hosted zone in Amazon Route53, where the DNS record for Seafile can be created
+- Hosted zone in Amazon Route 53, where the DNS record for Seafile can be created
 - SSH key uploaded to the Amazon EC2 console (in the region where the resources will be created)
 - TLS certificate that Terraform can upload to the Seafile server.
 
