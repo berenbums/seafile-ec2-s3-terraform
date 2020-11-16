@@ -1,0 +1,10 @@
+version: 2.1
+
+orbs:
+  terraform: circleci/terraform@1.1.0
+
+workflows:
+  lint-template:
+    jobs:
+      - terraform/fmt:
+          checkout: true
