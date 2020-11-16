@@ -23,7 +23,7 @@ resource "aws_iam_role" "instance_role" {
 EOF
 
   tags = {
-      Name = local.project_name
+    Name = local.project_name
   }
 }
 

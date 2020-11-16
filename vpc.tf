@@ -14,7 +14,7 @@ resource "aws_internet_gateway" "igw" {
 }
 
 resource "aws_subnet" "subnet" {
-  vpc_id = aws_vpc.vpc.id
+  vpc_id     = aws_vpc.vpc.id
   cidr_block = var.vpc_cidr
   tags = {
     Name = local.project_name
@@ -39,10 +39,10 @@ resource "aws_default_security_group" "default" {
   # Default ingress rule
   ingress {
     description = "Security Group"
-    protocol  = -1
-    self      = true
-    from_port = 0
-    to_port   = 0
+    protocol    = -1
+    self        = true
+    from_port   = 0
+    to_port     = 0
   }
 
   ingress {
@@ -87,7 +87,7 @@ resource "aws_default_security_group" "default" {
 
   # Default egress rule
   egress {
-    description	= "All"
+    description = "All"
     from_port   = 0
     to_port     = 0
     protocol    = "-1"

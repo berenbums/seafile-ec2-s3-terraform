@@ -4,24 +4,24 @@ provider "aws" {
 
 # The Seafile server
 resource "aws_instance" "ec2_instance" {
-  ami				= data.aws_ami.amazon-linux-2.id
-  associate_public_ip_address	= true
-  instance_type			= var.instance_type
-  key_name			= var.key_name
-  iam_instance_profile		= aws_iam_instance_profile.instance_profile.name
-  subnet_id			= aws_subnet.subnet.id
-  vpc_security_group_ids	= [aws_default_security_group.default.id]
-  user_data			= data.template_file.user_data.rendered
+  ami                         = data.aws_ami.amazon-linux-2.id
+  associate_public_ip_address = true
+  instance_type               = var.instance_type
+  key_name                    = var.key_name
+  iam_instance_profile        = aws_iam_instance_profile.instance_profile.name
+  subnet_id                   = aws_subnet.subnet.id
+  vpc_security_group_ids      = [aws_default_security_group.default.id]
+  user_data                   = data.template_file.user_data.rendered
 
   credit_specification {
     # Default value for t3 instances: unlimited
     cpu_credits = "standard"
   }
 
-# Uncomment this block to add termination protection to the instance
-#  lifecycle {
-#    prevent_destroy = true
-#  }
+  # Uncomment this block to add termination protection to the instance
+  #  lifecycle {
+  #    prevent_destroy = true
+  #  }
 
   tags = {
     Name = local.project_name

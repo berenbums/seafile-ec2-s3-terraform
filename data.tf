@@ -1,7 +1,7 @@
 # Get the most recent Amazon Linux 2 AMI
 data "aws_ami" "amazon-linux-2" {
   most_recent = true
-  owners = ["amazon"]
+  owners      = ["amazon"]
 
   filter {
     name   = "name"
