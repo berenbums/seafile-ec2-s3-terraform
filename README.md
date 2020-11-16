@@ -1,4 +1,7 @@
 # Seafile EC2/S3 Terraform project
+
+[![CircleCI](https://circleci.com/gh/berenbums/seafile-ec2-s3-terraform.svg?style=shield)](https://app.circleci.com/pipelines/github/berenbums/seafile-ec2-s3-terraform)
+
 ## Description
 Terraform project to provision a [Seafile](https://www.seafile.com/en/home/) server (Community Edition) on EC2 and configure an S3 bucket as back end.
 Seafile is installed using an [nginx](https://www.nginx.com/) webserver and a [MariaDB](https://mariadb.org/) database.
